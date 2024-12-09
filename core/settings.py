@@ -14,11 +14,13 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = ''
+SECRET_KEY = '123456'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Application definition
