@@ -53,3 +53,10 @@ urlpatterns = [
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:  # Debug Toolbar è disponibile solo se DEBUG è True
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),  # URL Debug Toolbar
+    ] + urlpatterns

@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # custom
+    'debug_toolbar',# custom
     'graphene_django',
     'django.contrib.postgres',
     'django_better_admin_arrayfield',
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'naturapeute',
     'blog',
     'api',
+    
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -145,6 +147,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/uploads/'
+
+INTERNAL_IPS = [
+    '127.0.0.1',  # Indirizzo localhost
+
+]
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 
