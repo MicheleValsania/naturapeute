@@ -226,8 +226,15 @@
     return marker
   })
   const markersGroup = L.featureGroup(markers)
-  map.fitBounds(markersGroup.getBounds())
   markersGroup.addTo(map)
+
+  if (markers.length > 0) {
+  const bounds = markersGroup.getBounds();
+  map.fitBounds(bounds, {
+    padding: [50, 50],
+    maxZoom: 12  // Limita lo zoom massimo quando si fa il fit
+  });
+}
 </script>
 {% endif %}
 
