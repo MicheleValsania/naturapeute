@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView, ListView, View
 from django.views.generic.base import RedirectView, reverse
-from django.shortcuts import redirect, reverse
+from django.shortcuts import redirect, reverse,render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.db.models import Q
+from .models import Therapist
 
 import vobject
 
