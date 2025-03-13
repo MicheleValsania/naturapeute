@@ -195,6 +195,12 @@ class Therapist(models.Model):
     patients = models.ManyToManyField("Patient", through="TherapistPatient", related_name="therapists")
     invoice_data = models.JSONField(default=dict, null=True, blank=True)
     services = ArrayField(models.IntegerField(), null=True, blank=True)
+    calendly_url = models.URLField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text="URL Calendly du thérapeute"
+    )
     creation_date = models.DateTimeField(auto_now_add=True)
     modification_date = models.DateTimeField(auto_now=True)
 
