@@ -25,9 +25,9 @@ class OfficeInline(admin.StackedInline):
 
 @admin.register(Therapist)
 class TherapistAdmin(admin.ModelAdmin, DynamicArrayMixin):
-    list_display = ["__str__", "image_tag", "agreements", "slug"]
+    list_display = ["__str__", "image_tag", "agreements", "slug", "calendly_url"]
     list_filter = ["is_certified", "membership"]
-    search_fields = ["firstname", "lastname", "slug"]
+    search_fields = ["firstname", "lastname", "slug", "calendly_url"]
     exclude = ["slug", "services", "invoice_data"]
     inlines = [OfficeInline]
 
